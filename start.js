@@ -5,8 +5,8 @@ const Filetype = require("file-type");
 const fs = require("fs");
 
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
+  input: process.stdin,
+  output: process.stdout,
 });
 
 const random = () => {
@@ -22,92 +22,107 @@ const sleep = async (ms) => {
 }
 
 const start = async function () {
-    console.clear();
-    console.log("Hello, welcome to loli generator");
-    console.log("\nKetik 'exit' untuk exit");
-    console.log("\nList menu:\n\n1. loli\nUntuk mencari foto loli random\n\n2. waifu\nUntuk mencari foto waifu random\n\n3. neko\nUntuk mencari foto nekonime random\n\n4. foxgirl\nUntuk mencari foto foxgirl random")
-    rl.question('\nSearch : ', async(input) => {
-        let q = input;
-        if (q === 'exit' || q === 'stop') {
-            console.log('oke, bye!');
-            process.exit();
-        }
-        
-        if (q.toLowerCase() === 'loli') {
-          rl.question('\nCount : ', async(total) => {
-          await loli(total).then(() => start())
-          })
-        } else if (q.toLowerCase() === 'waifu') {
-          rl.question('\nCount : ', async(total) => {
-          await waifu(total).then(() => start())
-          })
-        } else if (q.toLowerCase() === 'neko') {
-          rl.question('\nCount : ', async(total) => {
-          await neko(total).then(() => start())
-          })
-        } else if (q.toLowerCase() === "foxgirl") {
-          rl.question('\nCount : ', async(total) => {
-          await foxgirl(total).then(() => start())
-          })
-        } else {
-          console.log("\nPilih sesuai list diatas kak :)")
-          await sleep(2000)
-          start()
-        }
-    })
+  console.clear();
+  console.log("Hello, welcome to loli generator");
+  console.log("\nKetik 'exit' untuk exit");
+  console.log("\nList menu:\n\n1. loli\nUntuk mencari foto loli random\n\n2. waifu\nUntuk mencari foto waifu random\n\n3. neko\nUntuk mencari foto nekonime random\n\n4. foxgirl\nUntuk mencari foto foxgirl random")
+  rl.question('\nSearch : ', async(input) => {
+    let q = input;
     
-    const waifu = async(total) => {
-      var jum = parseInt(total) || 5;
-      var count = 1;
-      for (let s = 0; s < jum; s++) {
-        var aa = ["waifu+kawai","waifu+aesthetic","waifu","new+waifu"]
-        var a = await axios.get(`https://mccnlight-api.herokuapp.com/api/pinterest?q=${pickRandom(aa)}`)
-        var result = pickRandom(a.data.result)
-        var res = await fetch(result);
-        var data = await res.buffer();
-        var { ext } = await Filetype.fromBuffer(data);
-        var namafile = random()
-        fs.promises.writeFile(`./${namafile}.${ext}`, data, { encoding: 'base64' });
-        console.log(`[Success]`, count++, 'Done');
-      }
+    if (q.toLowerCase() === 'exit' || q.toLowerCase() === 'stop') {
+      console.log('\noke bye!');
+      process.exit();
+    } else if (q.toLowerCase() === 'loli') {
+      rl.question('\nCount : ', async(total) => {
+        await loli(total).then(() => start())
+      })
+    } else if (q.toLowerCase() === 'waifu') {
+      rl.question('\nCount : ', async(total) => {
+        await waifu(total).then(() => start())
+      })
+    } else if (q.toLowerCase() === 'neko') {
+      rl.question('\nCount : ', async(total) => {
+        await neko(total).then(() => start())
+      })
+    } else if (q.toLowerCase() === "foxgirl") {
+      rl.question('\nCount : ', async(total) => {
+        await foxgirl(total).then(() => start())
+      })
+    } else {
+      console.log("\nPilih sesuai list diatas kak :)")
+      await sleep(2000)
+      start()
     }
-    
-    const foxgirl = async(total) => {
-      var jum = parseInt(total) || 5;
-      var count = 1;
-      for (let s = 0; s < jum; s++) {
+  })
+
+  const waifu = async(total) => {
+    var jum = parseInt(total) || 5;
+    var count = 1;
+    for (let s = 0; s < jum; s++) {
+      var aa = ["waifu+kawai","waifu+aesthetic","waifu","new+waifu"]
+      var a = await axios.get(`https://mccnlight-api.herokuapp.com/api/pinterest?q=${pickRandom(aa)}`)
+      var result = pickRandom(a.data.result)
+      var res = await fetch(result);
+      var data = await res.buffer();
+      var {
+        ext
+      } = await Filetype.fromBuffer(data);
+      var namafile = random()
+      fs.promises.writeFile(`./${namafile}.${ext}`, data, {
+        encoding: 'base64'
+      });
+      console.log(`[Success]`, count++, 'Done');
+    }
+  }
+
+  const foxgirl = async(total) => {
+    var jum = parseInt(total) || 5;
+    var count = 1;
+    for (let s = 0; s < jum; s++) {
       var res = await fetch("https://mccnlight-api.herokuapp.com/api/akaneko/foxgirl")
       var data = await res.buffer();
-      var { ext } = await Filetype.fromBuffer(data);
+      var {
+        ext
+      } = await Filetype.fromBuffer(data);
       var namafile = random()
-      fs.promises.writeFile(`./${namafile}.${ext}`, data, { encoding: 'base64' });
+      fs.promises.writeFile(`./${namafile}.${ext}`, data, {
+        encoding: 'base64'
+      });
       console.log(`[Success]`, count++, 'Done');
-      }
     }
-    
-    const neko = async(total) => {
-      var jum = parseInt(total) || 5;
-      var count = 1;
-      for (let s = 0; s < jum; s++) {
+  }
+
+  const neko = async(total) => {
+    var jum = parseInt(total) || 5;
+    var count = 1;
+    for (let s = 0; s < jum; s++) {
       var res = await fetch("https://mccnlight-api.herokuapp.com/api/akaneko/neko")
       var data = await res.buffer();
-      var { ext } = await Filetype.fromBuffer(data);
+      var {
+        ext
+      } = await Filetype.fromBuffer(data);
       var namafile = random()
-      fs.promises.writeFile(`./${namafile}.${ext}`, data, { encoding: 'base64' });
+      fs.promises.writeFile(`./${namafile}.${ext}`, data, {
+        encoding: 'base64'
+      });
       console.log(`[Success]`, count++, 'Done');
-      }
     }
-    
-    const loli = async(total) => {
-      var jum = parseInt(total) || 5;
-      var count = 1;
-      for (let s = 0; s < jum; s++) {
+  }
+
+  const loli = async(total) => {
+    var jum = parseInt(total) || 5;
+    var count = 1;
+    for (let s = 0; s < jum; s++) {
       var a = await axios.get(`https://loli-api.glitch.me/api/v1/twintails`)
       var res = await fetch(a.data.url);
       var data = await res.buffer();
-      var { ext } = await Filetype.fromBuffer(data);
+      var {
+        ext
+      } = await Filetype.fromBuffer(data);
       var namafile = random()
-      fs.promises.writeFile(`./${namafile}.${ext}`, data, { encoding: 'base64' });
+      fs.promises.writeFile(`./${namafile}.${ext}`, data, {
+        encoding: 'base64'
+      });
       console.log(`[Success]`, count++, 'Done');
     }
   }
