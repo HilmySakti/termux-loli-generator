@@ -1,0 +1,36 @@
+{
+    "name": "loli-generator",
+    "version": "1.0.0",
+    "description": "loli generator made by lintod",
+    "main": "start.js",
+    "directories": {
+        "test": "test"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "node-fetch": "^2.6.1",
+        "readline": "*",
+        "file-type": "^16.5.0",
+        "fs": "*"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node start.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mccnlight/loli-generator.git"
+    },
+    "keywords": [
+        "loli",
+        "loli-generator",
+        "waifu"
+    ],
+    "author": "lintod",
+    "licensi": "MIT",
+    "bugs": {
+        "url": "https://github.com/mccnlight/loli-generator.git"
+    },
+    "homepage": "https://github.com/mccnlight/loli-generator.git"
+}
