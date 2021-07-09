@@ -1,5 +1,5 @@
 {
-    "name": "loli-generator",
+    "name": "termux-loli-generator",
     "version": "1.0.0",
     "description": "loli generator made by lintod",
     "main": "start.js",
@@ -20,7 +20,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/mccnlight/loli-generator.git"
+        "url": "git+https://github.com/mccnlight/termux-loli-generator.git"
     },
     "keywords": [
         "loli",
@@ -30,7 +30,7 @@
     "author": "lintod",
     "licensi": "MIT",
     "bugs": {
-        "url": "https://github.com/mccnlight/loli-generator.git"
+        "url": "https://github.com/mccnlight/termux-loli-generator.git"
     },
-    "homepage": "https://github.com/mccnlight/loli-generator.git"
+    "homepage": "https://github.com/mccnlight/termux-loli-generator.git"
 }
