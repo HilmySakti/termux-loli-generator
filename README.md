@@ -1,6 +1,7 @@
 # Termux Loli Generator
 
-[![My Instagram](https://img.shields.io/badge/My%20Instagram-@lindoww.8-green)](https://www.instagram.com/lindoww.8)
+[![My Instagram](https://img.shields.io/badge/My%20Instagram-@lindoww.8-green)](https://www.instagram.com/lindoww.8)<br>
+[![Trakteer](https://img.shields.io/badge/Support%20Me!-Trakteer-cyan)](https://trakteer.id/lintodamamiya)
 
 
 <p align="center"><img src="https://i.pinimg.com/originals/1c/1c/11/1c1c11456fe5788dd101fcf064c9ffe5.png" /></p>
