@@ -60,7 +60,7 @@ const start = async function () {
     var count = 1;
     for (let s = 0; s < jum; s++) {
       var aa = ["waifu+kawai","waifu+aesthetic","waifu","new+waifu"]
-      var a = await axios.get(`https://mccnlight-api.herokuapp.com/api/pinterest?q=${pickRandom(aa)}`)
+      var a = await axios.get(`https://megayaa.herokuapp.com/api/pinterest?q=${pickRandom(aa)}`)
       var result = pickRandom(a.data.result)
       var res = await fetch(result);
       var data = await res.buffer();
@@ -79,7 +79,7 @@ const start = async function () {
     var jum = parseInt(total) || 5;
     var count = 1;
     for (let s = 0; s < jum; s++) {
-      var res = await fetch("https://mccnlight-api.herokuapp.com/api/akaneko/foxgirl")
+      var res = await fetch("https://megayaa.herokuapp.com/api/akaneko/foxgirl")
       var data = await res.buffer();
       var {
         ext
@@ -96,7 +96,7 @@ const start = async function () {
     var jum = parseInt(total) || 5;
     var count = 1;
     for (let s = 0; s < jum; s++) {
-      var res = await fetch("https://mccnlight-api.herokuapp.com/api/akaneko/neko")
+      var res = await fetch("https://megayaa.herokuapp.com/api/akaneko/neko")
       var data = await res.buffer();
       var {
         ext
