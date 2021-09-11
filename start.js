@@ -24,8 +24,8 @@ const sleep = async (ms) => {
 const start = async function () {
   console.clear();
   console.log("Hello, welcome to loli generator");
-  console.log("\nKetik 'exit' untuk exit");
-  console.log("\nList menu:\n\n1. loli\nUntuk mencari foto loli random\n\n2. waifu\nUntuk mencari foto waifu random\n\n3. neko\nUntuk mencari foto nekonime random\n\n4. foxgirl\nUntuk mencari foto foxgirl random")
+  console.log("\nType 'exit' for exit");
+  console.log("\nList menu:\n\n1. loli\nFor search random loli\n\n2. waifu\nFor search random waifu's\n\n3. neko\nFor Search radndom nekonime\n\n4. foxgirl\nFor search random foxgirl")
   rl.question('\nSearch : ', async(input) => {
     let q = input;
     
